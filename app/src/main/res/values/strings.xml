@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Instagram</string>
+    <string name="success">Thành công</string>
+    <string name="error">Báo lỗi</string>
+    <string name="loading">Đang tải</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="confirm">Xác nhận</string>
+</resources>
