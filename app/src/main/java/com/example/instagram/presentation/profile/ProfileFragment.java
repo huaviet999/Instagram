@@ -2,8 +2,11 @@ package com.example.instagram.presentation.profile;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.instagram.R;
@@ -41,6 +44,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
         return R.layout.fragment_profile;
     }
 
+
     @Override
     protected void onMyCreateView(View view) {
         presenter.takeView(this);
@@ -51,6 +55,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
     }
+
 
     @Override
     public void onDestroy() {

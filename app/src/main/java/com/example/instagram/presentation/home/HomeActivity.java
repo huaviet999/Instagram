@@ -3,11 +3,13 @@ package com.example.instagram.presentation.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseActivity;
@@ -29,6 +31,8 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     private static final String TAG = HomeActivity.class.getSimpleName();
     @BindView(R.id.nav_home)
     BottomNavigationView navHome;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Inject
     HomeContract.Presenter presenter;
@@ -43,6 +47,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
         super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
         setupHomeBottomNav();
+        setSupportActionBar(toolbar);
         addFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
     }
 
@@ -110,4 +115,5 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
             }
         }, DELAY_TIME);
     }
+
 }

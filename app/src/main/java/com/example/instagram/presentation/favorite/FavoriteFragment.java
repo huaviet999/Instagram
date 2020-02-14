@@ -2,8 +2,11 @@ package com.example.instagram.presentation.favorite;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.instagram.R;
@@ -38,6 +41,8 @@ public class FavoriteFragment extends BaseFragment implements FavoriteContract.V
         return R.layout.fragment_favorite;
     }
 
+
+
     @Override
     protected void onMyCreateView(View view) {
         presenter.takeView(this);
@@ -47,6 +52,12 @@ public class FavoriteFragment extends BaseFragment implements FavoriteContract.V
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_bottom_navigation,menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override

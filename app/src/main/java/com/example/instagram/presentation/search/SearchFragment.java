@@ -2,8 +2,11 @@ package com.example.instagram.presentation.search;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.instagram.R;
@@ -40,6 +43,7 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
         return R.layout.fragment_search;
     }
 
+
     @Override
     protected void onMyCreateView(View view) {
         presenter.takeView(this);
@@ -49,6 +53,13 @@ public class SearchFragment extends BaseFragment implements SearchContract.View 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search,menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
