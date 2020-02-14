@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseActivity;
+import com.example.instagram.presentation.favorite.FavoriteFragment;
 import com.example.instagram.presentation.home.fragment.HomeFragment;
+import com.example.instagram.presentation.profile.ProfileFragment;
+import com.example.instagram.presentation.search.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import javax.inject.Inject;
@@ -53,7 +56,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     private static final int TAG_ADD = 2;
     private static final int TAG_FAVORITE = 3;
     private static final int TAG_PERSON = 4;
-    private static final int DELAY_TIME = 1000; // MILLISECONDS
+    private static final int DELAY_TIME = 300; // MILLISECONDS
 
     public void setupHomeBottomNav() {
         navHome.setOnNavigationItemSelectedListener(listener);
@@ -92,16 +95,16 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
                         replaceFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
                         break;
                     case TAG_SEARCH:
-                        replaceFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
+                        replaceFragment(SearchFragment.getInstance(), SearchFragment.TAG, R.id.frag_home_container);
                         break;
                     case TAG_ADD:
-                        replaceFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
+                        showWarningMessage("DANG PHAT TRIEN");
                         break;
                     case TAG_FAVORITE:
-                        replaceFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
+                        replaceFragment(FavoriteFragment.getInstance(), FavoriteFragment.TAG, R.id.frag_home_container);
                         break;
                     case TAG_PERSON:
-                        replaceFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
+                        replaceFragment(ProfileFragment.getInstance(), ProfileFragment.TAG, R.id.frag_home_container);
                         break;
                 }
             }
