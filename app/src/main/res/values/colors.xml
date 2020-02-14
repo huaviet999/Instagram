@@ -2,9 +2,9 @@
 <resources>
     <color name="default_color">#ffffff</color>
 
-    <color name="colorPrimary">#DB0923</color>
-    <color name="colorPrimaryDark">#cc4285f4</color>
-    <color name="colorAccent">#DB0923</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">@color/blue_300</color>
+    <color name="colorAccent">@color/blue_500</color>
     <color name="shutter_bg">#88ff00ff</color>
     <color name="flash_colorPrimary">#9989c541</color>
     <color name="control_background">#cc4285f4</color>
