@@ -5,6 +5,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import javax.inject.Inject;
 
@@ -53,6 +56,10 @@ public abstract class BaseActivity extends AppCompatActivity implements HasAndro
     }
 
     //Show Sweet Dialog
+    public void dismissSweetAlertDialog() {
+        AndroidDialogUtils.getInstance().hideSweetAlertDialog();
+    }
+
     public void showSuccessMessage(String message) {
         AndroidDialogUtils.getInstance().showSuccessSweetAlertDialog(this, message);
     }
@@ -67,5 +74,39 @@ public abstract class BaseActivity extends AppCompatActivity implements HasAndro
 
     public void showWarningMessage(String message) {
         AndroidDialogUtils.getInstance().showWarningSweetAlertDialog(this, message);
+    }
+    //Show Progress Dialog
+
+    public void hideProgressDialog() {
+        AndroidDialogUtils.getInstance().hideProgressDialog();
+    }
+
+    public void showProgressDialog() {
+        AndroidDialogUtils.getInstance().showProgressDialog(this, "");
+    }
+    /**
+     * ADD / REPLACE / HIDE FRAGMENT
+     */
+    protected FragmentManager fragmentManager;
+    protected void generateFragmentManager(){
+        if(fragmentManager == null){
+            fragmentManager = getSupportFragmentManager();
+        }
+    }
+    public void addFragment(Fragment fragment,String tag,int containerId){
+        generateFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(containerId,fragment,tag)
+                .addToBackStack(tag).commit();
+
+    }
+    public void hideFragment(int resId){
+        generateFragmentManager();
+        fragmentManager.beginTransaction().remove(fragmentManager.findFragmentById(resId)).commit();
+    }
+    public void replaceFragment(Fragment fragment, String tag, int containerId) {
+        generateFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(containerId, fragment, tag).addToBackStack(tag).commit();
     }
 }

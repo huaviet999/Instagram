@@ -5,6 +5,7 @@ import android.widget.EditText;
 
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseActivity;
+import com.example.instagram.presentation.home.HomeActivity;
 
 import javax.inject.Inject;
 
@@ -47,6 +48,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     public void onSignInSuccess() {
         showSuccessMessage("DANG NHAP THANH CONG");
+        HomeActivity.showHomeActivity(this);
     }
 
     @Override

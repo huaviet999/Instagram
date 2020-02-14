@@ -7,7 +7,6 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".presentation.login.LoginActivity">
-
     <TextView
         android:layout_marginBottom="60sp"
         android:layout_width="match_parent"

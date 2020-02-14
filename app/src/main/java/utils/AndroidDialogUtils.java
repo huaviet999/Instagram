@@ -2,6 +2,7 @@ package utils;
 
 //Singleton Pattern
 
+import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.example.instagram.R;
@@ -76,4 +77,20 @@ public class AndroidDialogUtils {
                 .setContentText(message).show();
     }
 
+    /**
+     * SHOW/HIDE PROGRESS DIALOG
+     */
+    private ProgressDialog mProgressDialog;
+
+    public void hideProgressDialog() {
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+        }
+        mProgressDialog = null;
+    }
+
+    public void showProgressDialog(Context context, String message) {
+        hideProgressDialog();
+        mProgressDialog = ProgressDialog.show(context, null, message, false, false, null);
+    }
 }
