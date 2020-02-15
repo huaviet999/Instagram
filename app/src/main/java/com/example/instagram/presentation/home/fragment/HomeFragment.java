@@ -20,6 +20,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -55,13 +57,14 @@ public class HomeFragment extends BaseFragment implements HomeFragmentContract.V
     protected void onMyCreateView(View view) {
         presenter.takeView(this);
         preparePostRV(view);
-
+       prepareToolbar(view);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -80,8 +83,8 @@ public class HomeFragment extends BaseFragment implements HomeFragmentContract.V
 
     private HomePostAdapter homePostAdapter;
 
-    public void preparePostRV(View view) {
 
+    public void preparePostRV(View view) {
         RecyclerView recyclerView = view.findViewById(R.id.rv_post);
         homePostAdapter = new HomePostAdapter(getContext(), listener);
         homePostAdapter.setData(testData());
@@ -90,6 +93,11 @@ public class HomeFragment extends BaseFragment implements HomeFragmentContract.V
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(homePostAdapter);
     }
+    public void prepareToolbar(View view){
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu_home);
+    }
+
 
     private ItemClickListener<Post> listener = new ItemClickListener<Post>() {
         @Override

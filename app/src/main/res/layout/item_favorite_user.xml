@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/spacing_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"></de.hdodenhof.circleimageview.CircleImageView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="huaviet999"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_20"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txt_realName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hua Hoang Viet"
+            android:textSize="@dimen/font_20">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phổ biến"
+            android:textSize="@dimen/font_18_title">
+
+        </TextView>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginRight="@dimen/spacing_20"
+            android:id="@+id/btn_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/spacing_20"
+            android:paddingRight="@dimen/spacing_20"
+            android:text="@string/follow"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_24"
+            app:cornerRadius="@dimen/spacing_4" />
+    </RelativeLayout>
+</LinearLayout>

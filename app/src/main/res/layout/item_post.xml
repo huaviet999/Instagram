@@ -33,17 +33,28 @@
                 android:textStyle="bold"></TextView>
         </LinearLayout>
 
-        <ImageView
-            android:scaleType="center"
-            android:id="@+id/img_post"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"></ImageView>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"></ImageView>
+
+            <ProgressBar
+                android:id="@+id/loading_img"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ProgressBar>
+        </RelativeLayout>
+
 
         <RelativeLayout
-            android:padding="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/item_like"
@@ -74,31 +85,31 @@
         </RelativeLayout>
 
         <TextView
-            android:text="10 likes"
             android:id="@+id/txt_likes_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:text="10 likes"
             android:textColor="@color/black"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:text="Username"
             android:id="@+id/txt_publisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:text="Username"
             android:textColor="@color/black"
             android:textStyle="bold">
 
         </TextView>
 
         <TextView
-            android:text="description"
             android:id="@+id/txt_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp">
+            android:layout_marginStart="8dp"
+            android:text="description">
 
         </TextView>
 

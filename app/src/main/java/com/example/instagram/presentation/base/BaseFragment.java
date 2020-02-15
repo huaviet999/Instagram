@@ -11,6 +11,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -62,7 +64,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getResLayoutId(), container, false);
-        unbinder = ButterKnife.bind(view);
+        unbinder = ButterKnife.bind(this,view);
         onMyCreateView(view);
         return view;
     }
@@ -78,5 +80,90 @@ public abstract class BaseFragment extends Fragment {
     public void hideProgressDialog(){
 
     }
+    public void showFWarningMessage(String message) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showToastMessage(message);
+        }
+    }
+
+    public void showFWarningDialog(String msg) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showWarningMessage(msg);
+        }
+    }
+
+    public void alertErrors(String title, String msg, int type) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            switch (type){
+                case SweetAlertDialog.SUCCESS_TYPE:
+                    ((BaseActivity) act).showSuccessMessage(msg);
+                    break;
+                case SweetAlertDialog.PROGRESS_TYPE:
+                    ((BaseActivity) act).showLoadingMessage(msg);
+                    break;
+            }
+
+        }
+    }
+
+    public void RB_hideDialog() {
+        Activity act = getActivity();
+
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).dismissSweetAlertDialog();
+
+        }
+    }
+    // theredbean
+    public void RB_Succeess_MSg(String msg) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showSuccessMessage(msg);
+        }
+    }
+
+    public void RB_Error_MSg(String msg) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showErrorMessage(msg);
+        }
+    }
+
+    public void RB_Loading_MSg(String msg) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showLoadingMessage(msg);
+        }
+    }
+
+    public void RB_Warning_MSg(String msg) {
+        Activity act = getActivity();
+        if (act instanceof BaseActivity) {
+            ((BaseActivity) act).showWarningMessage(msg);
+        }
+    }
+
+
+    //
+    public void showMessage(String message) {
+        alertErrors(message, message, SweetAlertDialog.SUCCESS_TYPE);
+    }
+
+    public void showLoading() {
+        RB_Loading_MSg("");
+    }
+
+    public void showLoading(String msg) {
+        RB_Loading_MSg(msg);
+    }
+
+    public void hideLoading() {
+        RB_hideDialog();
+    }
+
+    public void showAlertDialog(String msg) {RB_Warning_MSg(msg);}
 
 }

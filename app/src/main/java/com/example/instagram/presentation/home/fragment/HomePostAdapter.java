@@ -1,18 +1,25 @@
 package com.example.instagram.presentation.home.fragment;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseRecyclerViewAdapter;
 import com.example.instagram.presentation.base.ItemClickListener;
 import com.instagram.domain.Model.Post;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HomePostAdapter extends BaseRecyclerViewAdapter<Post, HomePostAdapter.ViewHolder> {
@@ -42,6 +49,7 @@ public class HomePostAdapter extends BaseRecyclerViewAdapter<Post, HomePostAdapt
         private final String TAG = ViewHolder.class.getSimpleName();
         TextView tvUsername, tvLikeCount, tvCommentCount, tvDescription, tvPublisher;
         ImageView imgProfile, imgPost, imgLike, imgComment, imgSave;
+        ProgressBar progressBar;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -57,6 +65,7 @@ public class HomePostAdapter extends BaseRecyclerViewAdapter<Post, HomePostAdapt
             imgLike = itemView.findViewById(R.id.item_like);
             imgComment = itemView.findViewById(R.id.item_comment);
             imgSave = itemView.findViewById(R.id.item_save);
+            progressBar = itemView.findViewById(R.id.loading_img);
 
         }
 
@@ -68,7 +77,20 @@ public class HomePostAdapter extends BaseRecyclerViewAdapter<Post, HomePostAdapt
             tvCommentCount.setText(String.format("View all %d comments", commentCount));
             tvDescription.setText(post.getDescription());
             tvPublisher.setText(post.getPublisher());
-            Glide.with(context).load(post.getPostImage()).placeholder(R.drawable.ic_launcher_background).into(imgPost);
+            Glide.with(context).load(post.getPostImage()).listener(new RequestListener<Drawable>() {
+                @Override
+                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                    progressBar.setVisibility(View.GONE);
+                    return false;
+
+                }
+
+                @Override
+                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                    progressBar.setVisibility(View.GONE);
+                    return false;
+                }
+            }).into(imgPost);
             if (post.getDescription().equals("")) {
                 tvDescription.setVisibility(View.GONE);
             } else {
