@@ -21,8 +21,16 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/color_app_main"
-            app:title="@string/app_name" />
+            android:background="@color/color_app_main">
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:id="@+id/instagram_logo"
+                android:layout_width="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_height="@dimen/font_40"
+                android:src="@drawable/instaphoto"></ImageView>
+        </androidx.appcompat.widget.Toolbar>
 
         <View
             android:layout_width="match_parent"
@@ -50,9 +58,10 @@
         android:id="@+id/nav_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_alignParentBottom="true"
         app:itemIconSize="26sp"
-        app:itemIconTint="@android:color/background_dark"
+        app:itemIconTint="@color/selector"
         app:itemTextColor="@android:color/background_dark"
         app:menu="@menu/menu_bottom_navigation">
 

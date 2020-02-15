@@ -1,2 +1,2 @@
-include ':app', ':sweetDialogLibrary'
+include ':app', ':sweetDialogLibrary', ':Domain'
 rootProject.name='Instagram'

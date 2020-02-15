@@ -1,6 +1,7 @@
 package com.example.instagram.presentation.home;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -21,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import javax.inject.Inject;
 
+import androidx.core.content.ContextCompat;
 import butterknife.BindView;
 import dagger.android.AndroidInjection;
 
@@ -47,7 +49,8 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
         super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
         setupHomeBottomNav();
-        setSupportActionBar(toolbar);
+        setupToolbar();
+
         addFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
     }
 
@@ -65,6 +68,11 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
 
     public void setupHomeBottomNav() {
         navHome.setOnNavigationItemSelectedListener(listener);
+    }
+
+    public void setupToolbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {

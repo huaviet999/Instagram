@@ -9,25 +9,18 @@
     android:padding="@dimen/spacing_16"
     tools:context=".presentation.login.LoginActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txtDescription"
+    <ImageView
+        android:id="@+id/instagram_logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/spacing_8"
-        android:fontFamily="@font/instafont2"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@color/black"
-        android:textFontWeight="500"
-        android:textSize="@dimen/font_64" />
+        android:layout_height="80dp"
+        android:src="@drawable/instaphoto"></ImageView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username_text_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtDescription"
+        android:layout_below="@+id/instagram_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/spacing_12"
         android:layout_marginBottom="@dimen/spacing_12"
@@ -59,10 +52,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:enabled="false"
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:enabled="false"
         android:gravity="center"
         android:text="@string/login"
         android:textAllCaps="true"
@@ -109,12 +102,12 @@
             android:text="@string/you_dont_have_account"></TextView>
 
         <TextView
-            android:textColor="@color/blue_900"
             android:id="@+id/txt_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_4"
             android:clickable="true"
-            android:text="@string/sign_up"></TextView>
+            android:text="@string/sign_up"
+            android:textColor="@color/blue_900"></TextView>
     </LinearLayout>
 </LinearLayout>
