@@ -53,6 +53,7 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
             mView.hideProgressDialog();
             mView.onSignUpSuccess();
             Log.d(TAG,user.toString());
+            ///
         }
 
         @Override
