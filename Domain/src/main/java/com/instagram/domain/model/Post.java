@@ -1,4 +1,4 @@
-package com.instagram.domain.Model;
+package com.instagram.domain.model;
 
 public class Post {
     private String postId;

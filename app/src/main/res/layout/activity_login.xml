@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/spacing_12"
         android:layout_marginBottom="@dimen/spacing_12"
-        android:hint="Tài khoản">
+        android:hint="@string/username">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_username"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/username_text_input_layout"
         android:layout_marginBottom="@dimen/spacing_12"
-        android:hint="Mật khẩu"
+        android:hint="@string/password"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText

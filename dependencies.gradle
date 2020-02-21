@@ -1,0 +1,46 @@
+ext {
+    rxJava = '2.2.9'
+    rxAndroid = '2.1.0'
+    javaxInject = '1'
+    javaXAnnotation = '1.0'
+    firebaseAuth = '19.2.0'
+    firebaseDatabase = '19.2.1'
+    firebaseStorage = '19.1.0'
+    //testing
+    junit = '4.12'
+    mockitoCore = '2.23.4'
+
+
+    dataDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaXAnnotation}",
+            javaxInject: "javax.inject:javax.inject:${javaxInject}",
+            rxJava: "io.reactivex.rxjava2:rxjava:${rxJava}"
+    ]
+    domainDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaXAnnotation}",
+            javaxInject: "javax.inject:javax.inject:${javaxInject}",
+            rxJava: "io.reactivex.rxjava2:rxjava:${rxJava}"
+    ]
+    domainTestDependencies = [
+            junit : "junit:junit:${junit}"
+    ]
+    remoteDependencies = [
+            rxJava   : "io.reactivex.rxjava2:rxjava:${rxJava}",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroid}"
+    ]
+    rxFirebaseDependencies = [
+            firebaseAuth: "com.google.firebase:firebase-auth:${firebaseAuth}",
+            firebaseDatabase: "com.google.firebase:firebase-database:${firebaseDatabase}",
+            rxJava: "io.reactivex.rxjava2:rxjava:${rxJava}",
+            firebaseStorage: "com.google.firebase:firebase-storage:${firebaseStorage}",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaXAnnotation}",
+            javaxInject: "javax.inject:javax.inject:${javaxInject}"
+    ]
+    rxFirebaseTestDependencies = [
+            junit : "junit:junit:${junit}",
+            mockito : "org.mockito:mockito-core:${mockitoCore}"
+    ]
+
+}
+

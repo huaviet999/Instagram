@@ -1,7 +1,6 @@
 package com.example.instagram.presentation.favorite;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,7 +11,7 @@ import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseRecyclerViewAdapter;
 import com.example.instagram.presentation.base.ItemClickListener;
 import com.google.android.material.button.MaterialButton;
-import com.instagram.domain.Model.User;
+import com.instagram.domain.model.User;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -56,7 +55,7 @@ public class FavoriteAdapter extends BaseRecyclerViewAdapter<User,FavoriteAdapte
             btnFollow = itemView.findViewById(R.id.btn_follow);
         }
         public void renderUI(User user){
-            tvUsername.setText(user.getUserName());
+            tvUsername.setText(user.getFullName());
             tvRealName.setText("Hua Viet");
             tvStatus.setText("Pho bien");
             Glide.with(context).load(user.getProfileImage()).placeholder(R.drawable.ic_launcher_background).into(imgProfile);

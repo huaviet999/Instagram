@@ -1,2 +1,2 @@
-include ':app', ':sweetDialogLibrary', ':Domain'
+include ':app', ':sweetDialogLibrary', ':Domain', ':Data', ':remote', ':RxFirebase'
 rootProject.name='Instagram'

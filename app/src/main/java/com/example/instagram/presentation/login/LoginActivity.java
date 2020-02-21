@@ -1,5 +1,6 @@
 package com.example.instagram.presentation.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,9 +10,11 @@ import android.widget.EditText;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseActivity;
 import com.example.instagram.presentation.home.HomeActivity;
+import com.example.instagram.presentation.register.RegisterActivity;
 
 import javax.inject.Inject;
 
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 import dagger.android.AndroidInjection;
@@ -27,11 +30,15 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Inject
     LoginContract.Presenter presenter;
 
+    public static void showLoginActiviy(AppCompatActivity activity){
+        Intent intent  = new Intent(activity,LoginActivity.class);
+        activity.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
-        disableLoginButtonIfEmpty();
+        checkIfEditTextIsChanged();
     }
 
     @Override
@@ -68,7 +75,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
 
-    private void disableLoginButtonIfEmpty() {
+    private void checkIfEditTextIsChanged() {
 
         edtUsername.addTextChangedListener(new TextWatcher() {
             @Override
@@ -111,6 +118,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @OnClick(R.id.txt_signup)
     public void onSignUpClick() {
-        showWarningMessage("ĐANG ĐƯỢC PHÁT TRIỂN");
+        RegisterActivity.showRegisterActivity(this);
     }
 }

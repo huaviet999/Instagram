@@ -13,19 +13,16 @@ import androidx.annotation.Nullable;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseFragment;
 import com.example.instagram.presentation.base.ItemClickListener;
-import com.instagram.domain.Model.Post;
+import com.instagram.domain.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
 
 public class HomeFragment extends BaseFragment implements HomeFragmentContract.View {

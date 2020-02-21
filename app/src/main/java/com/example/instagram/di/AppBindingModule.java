@@ -5,6 +5,8 @@ import com.example.instagram.presentation.home.HomeActivity;
 import com.example.instagram.presentation.home.HomeModule;
 import com.example.instagram.presentation.login.LoginActivity;
 import com.example.instagram.presentation.login.LoginModule;
+import com.example.instagram.presentation.register.RegisterActivity;
+import com.example.instagram.presentation.register.RegisterModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -16,4 +18,7 @@ public abstract class AppBindingModule {
 
     @ContributesAndroidInjector(modules = HomeModule.class)
     abstract HomeActivity homeActivity();
+
+    @ContributesAndroidInjector(modules = RegisterModule.class)
+    abstract RegisterActivity registerActivity();
 }

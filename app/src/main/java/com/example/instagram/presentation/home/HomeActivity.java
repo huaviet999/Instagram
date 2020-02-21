@@ -46,7 +46,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
         super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
         setupHomeBottomNav();
-//        setupToolbar();
 
         addFragment(HomeFragment.getInstance(), HomeFragment.TAG, R.id.frag_home_container);
     }
@@ -66,11 +65,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     public void setupHomeBottomNav() {
         navHome.setOnNavigationItemSelectedListener(listener);
     }
-//
-//    public void setupToolbar() {
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-//    }
 
     BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override

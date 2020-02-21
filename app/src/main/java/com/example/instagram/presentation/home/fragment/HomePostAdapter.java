@@ -16,7 +16,7 @@ import com.bumptech.glide.request.target.Target;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseRecyclerViewAdapter;
 import com.example.instagram.presentation.base.ItemClickListener;
-import com.instagram.domain.Model.Post;
+import com.instagram.domain.model.Post;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

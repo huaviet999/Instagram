@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 5
+        versionName "1.3"
+        consumerProguardFiles 'consumer-proguard-rules.pro'
+    }
+}
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+dependencies {
+    def rxFireBaseDependencies = rootProject.ext.rxFirebaseDependencies
+    def rxFireBaseTestDependencies = rootProject.ext.rxFirebaseTestDependencies
+    implementation rxFireBaseDependencies.firebaseAuth
+    implementation rxFireBaseDependencies.firebaseDatabase
+    implementation rxFireBaseDependencies.firebaseStorage
+    implementation rxFireBaseDependencies.rxJava
+    implementation rxFireBaseDependencies.rxAndroid
+    compileOnly rxFireBaseDependencies.javaxAnnotation
+    implementation rxFireBaseDependencies.javaxInject
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    testImplementation rxFireBaseTestDependencies.junit
+    testImplementation rxFireBaseTestDependencies.mockito
+}

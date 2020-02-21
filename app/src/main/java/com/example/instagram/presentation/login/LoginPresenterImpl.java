@@ -27,7 +27,7 @@ public class LoginPresenterImpl implements LoginContract.Presenter {
 
     @Override
     public void disableLoginButtonIfEmpty(CharSequence username,CharSequence password) {
-        if(username.toString().equals("") || password.toString().equals("")){
+        if(username.toString().isEmpty() || password.toString().isEmpty()){
             mView.disableLoginButtonIfTrue(true);
         } else{
             mView.disableLoginButtonIfTrue(false);

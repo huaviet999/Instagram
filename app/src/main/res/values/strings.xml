@@ -6,7 +6,14 @@
     <string name="warning">Cảnh báo</string>
     <string name="confirm">Xác nhận</string>
     <string name="login">Đăng nhập</string>
-    <string name="you_dont_have_account">Bạn không có tài khoản?</string>
+    <string name="you_dont_have_account">Bạn không có tài khoản? </string>
+    <string name="you_have_account">Bạn đã có tài khoản? </string>
     <string name="sign_up">Hãy đăng ký</string>
+    <string name="sign_in">Hãy đăng nhập</string>
     <string name="follow">Theo dõi</string>
+    <string name="register">Đăng ký</string>
+    <string name="username">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
+    <string name="fullname">Họ tên</string>
+    <string name="email">Email</string>
 </resources>
