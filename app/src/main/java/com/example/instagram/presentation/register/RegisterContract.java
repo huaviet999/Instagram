@@ -2,6 +2,7 @@ package com.example.instagram.presentation.register;
 
 import com.example.instagram.presentation.base.BasePresenter;
 import com.example.instagram.presentation.base.BaseView;
+import com.instagram.domain.model.User;
 
 public interface RegisterContract {
     interface View extends BaseView {
@@ -13,7 +14,7 @@ public interface RegisterContract {
     }
 
     interface Presenter extends BasePresenter<View> {
-        void signUp(String username, String fullname, String email, String password);
+        void signUp(User user);
 
         void disableRegisterButtonIfEmpty(CharSequence username, CharSequence fullname, CharSequence email, CharSequence password);
     }

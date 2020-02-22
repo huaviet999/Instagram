@@ -8,4 +8,5 @@ import io.reactivex.Maybe;
 
 public interface AuthenticationRepository {
     Maybe<User> registerAccount(String username, String fullname, String email, String password);
+    Maybe<String> loginWithEmailAndPassword(String email,String password);
 }

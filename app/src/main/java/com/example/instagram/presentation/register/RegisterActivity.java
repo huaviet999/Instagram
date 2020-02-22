@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseActivity;
 import com.example.instagram.presentation.login.LoginActivity;
+import com.instagram.domain.model.User;
 
 import javax.inject.Inject;
 
@@ -150,7 +151,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
         String fullname = edtFullname.getText().toString().trim();
         String email = edtEmail.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
-        presenter.signUp(username, fullname, email, password);
+        presenter.signUp(new User(username,fullname,email,password));
     }
 
     @OnClick(R.id.txt_signin)

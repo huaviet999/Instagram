@@ -3,6 +3,7 @@ package com.instagram.domain.model;
 public class User {
     private String userId;
     private String email;
+    private String password;
     private String username;
     private String fullName;
     private String profileImage;
@@ -11,12 +12,11 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String username, String fullName, String profileImage, String bio) {
-        this.userId = userId;
+    public User(String username, String fullName, String email, String password) {
+        this.email = email;
+        this.password = password;
         this.username = username;
         this.fullName = fullName;
-        this.profileImage = profileImage;
-        this.bio = bio;
     }
 
     public String getUserId() {
@@ -65,6 +65,14 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

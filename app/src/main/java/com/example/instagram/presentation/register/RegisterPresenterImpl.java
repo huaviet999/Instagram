@@ -33,9 +33,9 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
     }
 
     @Override
-    public void signUp(String username, String fullname, String email, String password) {
+    public void signUp(User user) {
         mView.showProgressDialog();
-        registerAccountUseCase.execute(new RegisterAccountObserver(), new RegisterAccountUseCase.Param(username, fullname, email, password));
+        registerAccountUseCase.execute(new RegisterAccountObserver(), new RegisterAccountUseCase.Param(user.getUsername(), user.getFullName(), user.getEmail(), user.getPassword()));
     }
 
     @Override
@@ -47,13 +47,12 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
         }
     }
 
-    private class RegisterAccountObserver extends DisposableMaybeObserver<User>{
+    private class RegisterAccountObserver extends DisposableMaybeObserver<User> {
         @Override
         public void onSuccess(User user) {
             mView.hideProgressDialog();
             mView.onSignUpSuccess();
-            Log.d(TAG,user.toString());
-            ///
+            Log.d(TAG, user.toString());
         }
 
         @Override

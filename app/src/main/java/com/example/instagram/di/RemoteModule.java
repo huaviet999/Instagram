@@ -1,6 +1,8 @@
 package com.example.instagram.di;
 
+import com.example.data.repository.AccountInfoRemote;
 import com.example.data.repository.AuthenticationRemote;
+import com.example.remote.AccountInfoRemoteImpl;
 import com.example.remote.AuthenticationRemoteImpl;
 
 import dagger.Binds;
@@ -13,4 +15,7 @@ import dagger.Module;
 public abstract class RemoteModule {
     @Binds
     public abstract AuthenticationRemote bindAuthenticationRemote(AuthenticationRemoteImpl impl);
+
+    @Binds
+    public abstract AccountInfoRemote bindAccountInfoRemote(AccountInfoRemoteImpl impl);
 }

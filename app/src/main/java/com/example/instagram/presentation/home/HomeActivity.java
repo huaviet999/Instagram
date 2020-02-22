@@ -115,4 +115,8 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
         }, DELAY_TIME);
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }

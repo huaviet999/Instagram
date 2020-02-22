@@ -32,4 +32,9 @@ public class AuthenticationRepositoryImpl implements AuthenticationRepository {
                     }
                 });
     }
+
+    @Override
+    public Maybe<String> loginWithEmailAndPassword(String email, String password) {
+        return authenticationRemote.loginWithEmailAndPassword(email,password);
+    }
 }

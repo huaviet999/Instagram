@@ -33,4 +33,15 @@ public class AuthenticationRemoteImpl implements AuthenticationRemote {
                 });
 
     }
+
+    @Override
+    public Maybe<String> loginWithEmailAndPassword(String email, String password) {
+        return RxFirebaseAuth.signInWithEmailAndPassword(firebaseAuth,email,password)
+                .map(new Function<AuthResult, String>() {
+                    @Override
+                    public String apply(AuthResult authResult) throws Exception {
+                        return authResult.getUser().getUid();
+                    }
+                });
+    }
 }

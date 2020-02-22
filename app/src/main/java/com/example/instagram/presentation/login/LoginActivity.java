@@ -21,8 +21,8 @@ import dagger.android.AndroidInjection;
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
     private static final String TAG = LoginActivity.class.getSimpleName();
-    @BindView(R.id.edt_username)
-    EditText edtUsername;
+    @BindView(R.id.edt_email)
+    EditText edtEmail;
     @BindView(R.id.edt_password)
     EditText edtPassword;
     @BindView(R.id.btn_login)
@@ -60,7 +60,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void onSignInSuccess() {
-        showSuccessMessage("DANG NHAP THANH CONG");
         HomeActivity.showHomeActivity(this);
     }
 
@@ -77,7 +76,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     private void checkIfEditTextIsChanged() {
 
-        edtUsername.addTextChangedListener(new TextWatcher() {
+        edtEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -99,7 +98,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                presenter.disableLoginButtonIfEmpty(edtUsername.getText().toString(), charSequence);
+                presenter.disableLoginButtonIfEmpty(edtEmail.getText().toString(), charSequence);
             }
 
             @Override
@@ -111,7 +110,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @OnClick(R.id.btn_login)
     public void onLoginButtonClick() {
-        String username = edtUsername.getText().toString().trim();
+        String username = edtEmail.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
         presenter.login(username, password);
     }
