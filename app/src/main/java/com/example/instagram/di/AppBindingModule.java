@@ -1,6 +1,8 @@
 package com.example.instagram.di;
 
 
+import com.example.instagram.presentation.add.AddActivity;
+import com.example.instagram.presentation.add.AddModule;
 import com.example.instagram.presentation.home.HomeActivity;
 import com.example.instagram.presentation.home.HomeModule;
 import com.example.instagram.presentation.login.LoginActivity;
@@ -21,4 +23,7 @@ public abstract class AppBindingModule {
 
     @ContributesAndroidInjector(modules = RegisterModule.class)
     abstract RegisterActivity registerActivity();
+
+    @ContributesAndroidInjector(modules = AddModule.class)
+    abstract AddActivity addActivity();
 }

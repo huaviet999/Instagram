@@ -121,22 +121,19 @@ public class FavoriteFragment extends BaseFragment implements FavoriteContract.V
 
     public List<User> testData() {
         List<User> data = new ArrayList<>();
-//        data.add(new User("1", "huaviet999", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("2", "nguyen48", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("3", "kevin90", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("4", "hoangnam", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("1", "huaviet999", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("2", "nguyen48", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("3", "kevin90", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("4", "hoangnam", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("1", "huaviet999", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("2", "nguyen48", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("3", "kevin90", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("4", "hoangnam", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("1", "huaviet999", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("2", "nguyen48", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("3", "kevin90", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
-//        data.add(new User("4", "hoangnam", "https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
+        data.add(new User("1", "huaviet999", "viet","Viet Hua","https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg","ABCED"));
         return data;
     }
     @OnClick(R.id.txt_recommend)

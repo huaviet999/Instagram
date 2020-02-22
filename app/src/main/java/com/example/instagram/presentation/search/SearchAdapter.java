@@ -1,4 +1,4 @@
-package com.example.instagram.presentation.favorite;
+package com.example.instagram.presentation.search;
 
 import android.content.Context;
 import android.view.View;
@@ -19,10 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * Created by Viet Hua on 2/15/2020
  */
-public class FavoriteAdapter extends BaseRecyclerViewAdapter<User,FavoriteAdapter.ViewHolder>  {
-    private static final String TAG = FavoriteAdapter.class.getSimpleName();
+public class SearchAdapter extends BaseRecyclerViewAdapter<User, SearchAdapter.ViewHolder>  {
+    private static final String TAG = SearchAdapter.class.getSimpleName();
     private FollowButtonClickListener followButtonClickListener;
-    public FavoriteAdapter(Context context, ItemClickListener<User> listener){
+    public SearchAdapter(Context context, ItemClickListener<User> listener){
         super(context);
         setListener(listener);
     }

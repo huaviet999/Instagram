@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.instagram.R;
+import com.example.instagram.presentation.add.AddActivity;
 import com.example.instagram.presentation.base.BaseActivity;
 import com.example.instagram.presentation.favorite.FavoriteFragment;
 import com.example.instagram.presentation.home.fragment.HomeFragment;
@@ -60,7 +61,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     private static final int TAG_ADD = 2;
     private static final int TAG_FAVORITE = 3;
     private static final int TAG_PERSON = 4;
-    private static final int DELAY_TIME = 300; // MILLISECONDS
+    private static final int DELAY_TIME = 10; // MILLISECONDS
 
     public void setupHomeBottomNav() {
         navHome.setOnNavigationItemSelectedListener(listener);
@@ -77,6 +78,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
                     openFragmentByTag(TAG_SEARCH);
                     break;
                 case R.id.item_add:
+                    menuItem.setCheckable(false);
                     openFragmentByTag(TAG_ADD);
                     break;
                 case R.id.item_favorite:
@@ -102,7 +104,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
                         replaceFragment(SearchFragment.getInstance(), SearchFragment.TAG, R.id.frag_home_container);
                         break;
                     case TAG_ADD:
-                        showWarningMessage("DANG PHAT TRIEN");
+                        AddActivity.showAddActivity(HomeActivity.this);
                         break;
                     case TAG_FAVORITE:
                         replaceFragment(FavoriteFragment.getInstance(), FavoriteFragment.TAG, R.id.frag_home_container);
