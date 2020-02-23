@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import com.example.instagram.R;
 import com.example.instagram.presentation.base.BaseFragment;
 import com.example.instagram.presentation.base.ItemClickListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,7 @@ import javax.inject.Inject;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import dagger.android.support.AndroidSupportInjection;
 
 /**
@@ -70,7 +70,8 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
         RecyclerView recyclerView = view.findViewById(R.id.rv_pic);
         profileAdapter = new ProfileAdapter(getContext(), listener);
         profileAdapter.setData(testData());
-        LinearLayoutManager lm = new GridLayoutManager(getContext(), 3);
+        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(3,1);
+        lm.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
         recyclerView.setLayoutManager(lm);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(profileAdapter);
@@ -90,7 +91,7 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
 
     public List<String> testData() {
         List<String> data = new ArrayList<>();
-        data.add("https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
         data.add("https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2017/09/29/09/12/laugh-2798443_960_720.jpg");
@@ -119,18 +120,41 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
         data.add("https://cdn.pixabay.com/photo/2019/09/10/07/06/beauty-4465397__340.jpg");
         data.add("https://cdn.pixabay.com/photo/2019/09/10/07/06/beauty-4465397__340.jpg");
         data.add("https://cdn.pixabay.com/photo/2019/09/10/07/06/beauty-4465397__340.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1500258593672-b080c40f4b02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        data.add("https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80");
         data.add("https://cdn.pixabay.com/photo/2019/09/10/07/06/beauty-4465397__340.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1500258593672-b080c40f4b02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        data.add("https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80");
+        data.add("https://cdn.pixabay.com/photo/2019/09/10/07/06/beauty-4465397__340.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
+        data.add("https://images.unsplash.com/photo-1543248939-ff40856f65d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
         data.add("https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg");
-
+        data.add("https://images.unsplash.com/photo-1500258593672-b080c40f4b02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        data.add("https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80");
         return data;
     }
 
