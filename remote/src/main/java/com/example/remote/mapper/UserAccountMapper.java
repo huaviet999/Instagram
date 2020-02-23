@@ -11,7 +11,12 @@ public class UserAccountMapper implements BaseMapper<UserAccountModel, UserEntit
 
     @Override
     public UserEntity mapFromModel(UserAccountModel userAccountModel) {
-        return null;
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserId(userAccountModel.getUserId());
+        userEntity.setUsername(userAccountModel.getUsername());
+        userEntity.setFullname(userAccountModel.getFullname());
+        userEntity.setEmail(userAccountModel.getEmail());
+        return userEntity;
     }
 
     public UserAccountModel mapToModel(String userId, String username, String fullname, String email) {

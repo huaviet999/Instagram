@@ -37,4 +37,14 @@ public class UserAccountModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "UserAccountModel{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", fullname='" + fullname + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
