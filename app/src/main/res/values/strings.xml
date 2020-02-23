@@ -16,4 +16,7 @@
     <string name="password">Mật khẩu</string>
     <string name="fullname">Họ tên</string>
     <string name="email">Email</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
 </resources>

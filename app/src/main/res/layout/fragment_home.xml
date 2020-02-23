@@ -21,22 +21,37 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/color_app_main">
 
-            <ImageView
-                android:id="@+id/item_camera"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/font_30"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="7dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                android:src="@drawable/ic_camera_black_24dp"></ImageView>
+                <ImageView
+                    android:id="@+id/item_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_camera_black_24dp"></ImageView>
 
-            <ImageView
-                android:id="@+id/instagram_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/font_36"
-                android:layout_marginTop="18dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/instaphoto"></ImageView>
+                <ImageView
+                    android:id="@+id/instagram_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/spacing_12"
+                    android:src="@drawable/instaphoto"></ImageView>
+
+                <ImageView
+                    android:clickable="true"
+                    android:id="@+id/item_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/spacing_8"
+                    android:src="@drawable/ic_live_black_24dp"></ImageView>
+            </RelativeLayout>
+
         </androidx.appcompat.widget.Toolbar>
 
         <View

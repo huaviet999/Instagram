@@ -92,7 +92,6 @@ public class HomeFragment extends BaseFragment implements HomeFragmentContract.V
     }
     public void prepareToolbar(View view){
         Toolbar toolbar = view.findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.menu_home);
     }
 
 

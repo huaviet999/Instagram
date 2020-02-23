@@ -45,6 +45,7 @@ public class LoginPresenterImpl implements LoginContract.Presenter {
 
         @Override
         public void onError(Throwable e) {
+            mView.hideProgressDialog();
             mView.onSignInFailed();
         }
 
